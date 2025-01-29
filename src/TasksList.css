@@ -1,0 +1,91 @@
+/* עיצוב כללי */
+body {
+    font-family: "Arial", sans-serif;
+    background-color: #f0f8ff;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* כותרת */
+  .title {
+    text-align: center;
+    color: #4a90e2;
+    font-size: 2.5rem;
+    margin: 20px 0;
+  }
+  
+  /* מיכל המשימות */
+  .task-container {
+    list-style: none;
+    padding: 0;
+    margin: 20px auto;
+    max-width: 600px;
+  }
+  
+  /* עיצוב משימה */
+  .task-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #ffffff;
+    padding: 10px 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+  }
+  
+  .task-item:hover {
+    transform: scale(1.02);
+  }
+  
+  /* משימות שהושלמו */
+  .task-item.completed {
+    text-decoration: line-through;
+    color: #b0b0b0;
+    background-color: #e0f7fa;
+  }
+  
+  /* תאריך משימה */
+  .task-date {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+  }
+  
+  /* כפתור מחיקה */
+  .delete-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .delete-btn:hover {
+    background-color: #c0392b;
+  }
+  
+  /* כפתור עריכה */
+  .edit-btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .edit-btn:hover {
+    background-color: #2980b9;
+  }
+  
+  /* צ'קבוקס */
+  input[type="checkbox"] {
+    transform: scale(1.2);
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  
