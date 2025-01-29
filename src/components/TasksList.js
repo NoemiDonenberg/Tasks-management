@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import Task from "../models/Task";
-import AddTask from "./AddTask";
+// import Task from "../models/Task";
+import AddTask from "./AddTasks";
+import Task from "../models/Tasks";
 
 function TaskList() {
   const [tasks, setTasks] = useState([
@@ -11,11 +12,17 @@ function TaskList() {
   // פונקציה להוספת משימה
   const addTask = (description) => {
     const newTask = new Task(
-      tasks.length + 1, // id ייחודי
+      tasks.length + 1,
       description,
-      new Date().toISOString().split("T")[0] // תאריך נוכחי
+      new Date().toISOString().split("T")[0]
     );
-    setTasks([...tasks, newTask]); // הוספת המשימה למערך
+    setTasks([...tasks, newTask]);
+  };
+
+  // פונקציה למחיקת משימה
+  const deleteTask = (id) => {
+    const updatedTasks = tasks.filter((task) => task.id !== id);
+    setTasks(updatedTasks);
   };
 
   return (
@@ -26,6 +33,7 @@ function TaskList() {
         {tasks.map((task) => (
           <li key={task.id}>
             <strong>{task.description}</strong> - {task.date}
+            <button onClick={() => deleteTask(task.id)}>מחיקה</button>
           </li>
         ))}
       </ul>
