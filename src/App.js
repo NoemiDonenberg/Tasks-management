@@ -1,12 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
 import TaskList from './components/TasksList';
+import { initializeApp } from 'firebase/app';
+
 
 function App() {
+  const app = initializeApp(firebaseConfig);
   return (
     <div>
       <TaskList></TaskList>
     </div>
+    
     // <div className="App">
     //   <header className="App-header">
     //     <img src={logo} className="App-logo" alt="logo" />
